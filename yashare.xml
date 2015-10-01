@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="content" method="upgrade">
+    <name>JextYaShare</name>
+    <author>darang</author>
+    <creationDate>31 may 2011</creationDate>
+    <copyright>(Copyright (c) 2009 - 2011 Jext. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>darang@tut.by</authorEmail>
+    <authorUrl>www.jext.biz</authorUrl>
+    <version>1.6</version>
+    <description>Jext.biz. Блок «Поделиться» позволит пользователям вашего сайта или блога в один клик поделиться контентом сайта
+        в социальных сетях.
+        http://api.yandex.ru/share/doc/dg/concepts/share-button-ov.xml
+    </description>
+    <files>
+        <filename plugin="jextyashare">jextyashare.php</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="position" type="list" default="1" label="Позиция блока"
+                       description="Расположение блока на странице">
+                    <option value="1">После статьи</option>
+                    <option value="2">Перед статьёй</option>
+                    <!--   <option value="3">After the title</option>   -->
+                </field>
+                <field name="language" type="list" default="ru" label="Язык текста блока"
+                       description="Возможные значения:
+    be - белорусский;
+    en - английский;
+    kk - казахский;
+    ru - русский;
+    tt - татарский;
+    uk - украинский.
+">
+                    <option value="be">be</option>
+                    <option value="en">en</option>
+                    <option value="kk">kk</option>
+                    <option value="ru">ru</option>
+                    <option value="tt">tt</option>
+                    <option value="uk">uk</option>
+
+                </field>
+                <field name="elementStyle_type" type="list" default="ru" label="Внешний вид блока"
+                       description="Внешний вид блока:
+    button - кнопка;
+    link - ссылка;
+    icon - значок без текста, открывающий всплывающее окно по щелчку мыши;
+    none - значок или несколько значков без текста, без возможности открытия всплывающего окна.
+">
+                    <option value="button">button</option>
+                    <option value="link">link</option>
+                    <option value="icon">icon</option>
+                    <option value="none">none</option>
+                </field>
+                <field name="quickServices" type="text" size="60"
+                       default="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir" label="Список сервисов"
+                       description="Список сервисов, показываемых в блоке, см. Список поддерживаемых сервисов(http://api.yandex.ru/share/doc/dg/concepts/share-button-ov.xml#supported-networks). Любые другие сервисы игнорируются.
+Значение по умолчанию: ['', 'yaru', 'vkontakte', 'twitter', 'facebook']."/>
+                <!--   <field name="elementStyle_border" type="radio" default="false" label="elementStyle.border"
+                    description="elementStyle.border"><option value="false">JNo</option>
+                 <option value="true">JYes</option>
+              </field>  -->
+
+            </fieldset>
+        </fields>
+    </config>
+</extension>
